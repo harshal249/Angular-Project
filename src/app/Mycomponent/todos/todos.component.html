@@ -1,0 +1,16 @@
+<h2 class="text-center mb-2 ">{{title}}</h2>
+<br>
+<div class="text-center mb-2">
+    <input type="text" placeholder="Enter the new task" #task/>
+    <br>
+    <br>
+    <button class="btn-sm" (click)="onClick(task.value)">Add New Task</button>
+    <br>
+    <br>
+    <div *ngIf="this.list.length==0">No Task to display!!!</div>
+    <br>
+    <br>
+    <ul class="no" *ngFor="let item of list">
+        <li>{{item.name}} <button class="btn-sm" (click)="removeTask(item.id)">Remove</button></li>
+    </ul>
+</div>
